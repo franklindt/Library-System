@@ -1,3 +1,5 @@
+package com.culminating.user;
+
 // All commented code will be implemented in the future when the dependencies are created
 
 public class Librarian extends User {
@@ -9,7 +11,7 @@ public class Librarian extends User {
 	}
 
 	public String toString() {
-		String user = "Name: " + this.name + "\nAddress: " + this.address + "\nAge: " + this.age + "\nGender: " + this.gender + "\nBirth Date: " + this.birthDate/** + "\nLibrary: " + this.library**/;
+		String librarian = "Name: " + this.name + "\nAddress: " + this.address + "\nAge: " + this.age + "\nGender: " + this.gender + "\nBirth Date: " + this.birthDate/** + "\nLibrary: " + this.library**/;
 		return librarian;
 	}
 }
