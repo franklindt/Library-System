@@ -4,7 +4,7 @@ public class Borrower extends User {
 	//private Library library;
 
 	public Borrower(String name, String address, int age, String gender, String birthDate, /**Library library**/) {
-		super();
+		super(name, address, age, gender, birthDate);
 		//this.library = library;
 	}
 

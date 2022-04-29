@@ -8,7 +8,7 @@ public class Librarian extends User {
 		// this.library = library
 	}
 
-	public static String toString() {
+	public String toString() {
 		String user = "Name: " + this.name + "\nAddress: " + this.address + "\nAge: " + this.age + "\nGender: " + this.gender + "\nBirth Date: " + this.birthDate/** + "\nLibrary: " + this.library**/;
 		return librarian;
 	}
