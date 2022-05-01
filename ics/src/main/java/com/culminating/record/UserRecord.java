@@ -1,10 +1,16 @@
 package com.culminating.record;
 
+import java.util.Date;
+
+import com.culminating.media.Media;
+import com.culminating.payments.Fee;
+import com.culminating.utils.Log;
+
 public class UserRecord {
-    private Penalty pastFees;
+    private Fee[] pastFees;
     private Log[][] borrowHistory;
 
-    public UserRecord(Penalty pastFees, Log[][] borrowHistory) {
+    public UserRecord(Fee[] pastFees, Log[][] borrowHistory) {
         this.pastFees = pastFees;
         this.borrowHistory = borrowHistory;
     }
@@ -20,11 +26,11 @@ public class UserRecord {
     /*
      * Accessors and Mutators
      */
-    public Penalty getPastFees() {
+    public Fee[] getPastFees() {
         return this.pastFees;
     }
 
-    public void setPastFees(Penalty pastFees) {
+    public void setPastFees(Fee[] pastFees) {
         this.pastFees = pastFees;
     }
 

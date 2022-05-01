@@ -1,5 +1,8 @@
 package com.culminating.record;
 
+import com.culminating.media.Media;
+import com.culminating.utils.Log;
+
 public class MediaRecord {
     private Log[][] borrowHistory;
     private Media item;
