@@ -1,8 +1,8 @@
 package com.culminating.payments;
 
 import java.util.Date;
-import com.culminating.media;
-import com.culminating.user;
+import com.culminating.media.Media;
+import com.culminating.user.User;
 
 public class Fee {
 
@@ -22,11 +22,14 @@ public class Fee {
 		this.fulfilled = fulfilled;
 	}
 
-	public static void pay() {
+	public void pay() {
 		this.fulfilled = true;
 	}
 
-	public static String toString() {
-		String fee = "Recipient: " + this.recipient + "\nItem(s): " + this.item +  "\nAmount: " + this.amount + "\nDate: " + this.date + "\nDescription: " + this.details + "\nPaid: " + this.fulfilled;
+	@Override
+	public String toString() {
+		String fee = "Recipient: " + this.recipient + "\nItem(s): " + this.item + "\nAmount: " + this.amount
+				+ "\nDate: " + this.date + "\nDescription: " + this.details + "\nPaid: " + this.fulfilled;
+		return fee;
 	}
 }
