@@ -1,3 +1,5 @@
+package com.culminating.user;
+
 // All commented code will be implemented in the future when the dependencies are created
 
 public class User {
