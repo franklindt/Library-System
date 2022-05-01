@@ -1,5 +1,10 @@
 package com.culminating.utils;
 
+import java.util.Date;
+
+import com.culminating.media.Media;
+import com.culminating.user.User;
+
 public class Log {
     private User user;
     private Media item;
