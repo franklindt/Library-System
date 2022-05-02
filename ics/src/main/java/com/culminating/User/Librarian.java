@@ -1,17 +1,21 @@
+// 
+// Decompiled by Procyon v0.5.36
+// 
+
 package com.culminating.user;
 
-// All commented code will be implemented in the future when the dependencies are created
+import java.util.Date;
 
-public class Librarian extends User {
-	// private Library library;
-
-	public Librarian(String name, String address, int age, String gender, String birthDate/**, Library library**/) {
-		super(name, address, age, gender, birthDate);
-		// this.library = library
-	}
-
+public class Librarian extends User
+{
+    public Librarian() {
+    }
+    
+    public Librarian(final String name, final String address, final int age, final String gender, final Date birthDate) {
+        super(name, address, age, gender, birthDate);
+    }
+    
 	public String toString() {
-		String librarian = "Name: " + this.name + "\nAddress: " + this.address + "\nAge: " + this.age + "\nGender: " + this.gender + "\nBirth Date: " + this.birthDate/** + "\nLibrary: " + this.library**/;
-		return librarian;
+		return super.toString();
 	}
 }

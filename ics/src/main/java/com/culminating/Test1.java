@@ -1,7 +1,7 @@
 package com.culminating;
 
 import com.culminating.media.*;
-import com.culminating.payments.*;
+import com.culminating.payment.*;
 import com.culminating.record.*;
 import com.culminating.user.*;
 import com.culminating.utils.*;
