@@ -1,11 +1,7 @@
 package com.culminating;
 
 import com.culminating.media.*;
-<<<<<<< HEAD
 import com.culminating.payment.*;
-=======
-import com.culminating.payments.*;
->>>>>>> 65e9aac3aebef72afa5ffa49694ee2c6479b62fc
 import com.culminating.record.*;
 import com.culminating.user.*;
 import com.culminating.utils.*;
@@ -18,7 +14,7 @@ public class Test1 {
 
     public static Scanner scanner = new Scanner(System.in);
 
-	public static void main(String[] arg) {
+    public static void main(String[] arg) {
         String input = "";
         while (!input.equals("-1")) {
             input = scanner.nextLine();
@@ -29,23 +25,23 @@ public class Test1 {
                     break;
                 case "book":
                     Book book = new Book();
-                    book_( book);
+                    book_(book);
                     break;
                 case "ebook":
                     EBook ebook = new EBook();
                     ebook_(ebook);
                     break;
-                case "dvd": 
+                case "dvd":
                     DVD dvd = new DVD();
                     dvd_(dvd);
                     break;
-                case "videogame": 
+                case "videogame":
                     VideoGames videogame = new VideoGames();
                     videogame_(videogame);
                     break;
                 case "transaction":
                     Transaction transaction = new Transaction();
-                    //transaction_(transaction);
+                    // transaction_(transaction);
                     break;
                 case "fee":
                     System.out.println("Create a raw fee? ");
@@ -53,8 +49,7 @@ public class Test1 {
                     Fee fee;
                     if (createRaw) {
                         fee = new Fee();
-                    }
-                    else {
+                    } else {
                         System.out.println("Creating user");
                         User user = new User();
                         user_(user);
@@ -81,11 +76,11 @@ public class Test1 {
                         String details = scanner.nextLine();
                         System.out.println("Paid? ");
                         boolean paid = scanner.nextLine().equals("yes");
-                        fee = new Fee(user, item, amount, date,details,paid);
+                        fee = new Fee(user, item, amount, date, details, paid);
                     }
                     fee_(fee);
                     break;
-                case "libraryrecord": 
+                case "libraryrecord":
                     LibraryRecord libraryrecord = new LibraryRecord();
                     libraryrecord_(libraryrecord);
                     break;
@@ -94,7 +89,7 @@ public class Test1 {
                     mediarecord_(mediarecord);
                     break;
                 case "userrecord":
-                    UserRecord  userrecord = new UserRecord();
+                    UserRecord userrecord = new UserRecord();
                     userrecord_(userrecord);
                     break;
                 case "log":
@@ -120,14 +115,13 @@ public class Test1 {
                     System.out.println("Invalid!");
             }
         }
-	}
-
+    }
 
     public static void media_(Media media) { // too lazy to make date thingy
         String input = "";
         while (!input.equals("-1")) {
             input = scanner.nextLine();
-            switch(input) {
+            switch (input) {
                 case "printtype":
                     System.out.println(media.getClass());
                     break;
@@ -159,18 +153,18 @@ public class Test1 {
                     media.setPublisher(scanner.nextLine());
                     break;
                 // case "publishdate":
-                //     int year,month,day;
-                //     System.out.println("Day: ");
-                //     day = Integer.parseInt(scanner.nextLine());
-                //     System.out.println("Month: ");
-                //     month = Integer.parseInt(scanner.nextLine());
-                //     System.out.println("Year: ");
-                //     year = Integer.parseInt(scanner.nextLine());
-                //     user.setBirthDate(new Date(year,month,day));
-                //     break;
+                // int year,month,day;
+                // System.out.println("Day: ");
+                // day = Integer.parseInt(scanner.nextLine());
+                // System.out.println("Month: ");
+                // month = Integer.parseInt(scanner.nextLine());
+                // System.out.println("Year: ");
+                // year = Integer.parseInt(scanner.nextLine());
+                // user.setBirthDate(new Date(year,month,day));
+                // break;
                 case "-1":
                     break;
-                case "type": 
+                case "type":
                     System.out.println(media.getClass());
                     break;
                 default:
@@ -183,7 +177,7 @@ public class Test1 {
         String input = "";
         while (!input.equals("-1")) {
             input = scanner.nextLine();
-            switch(input) {
+            switch (input) {
                 case "print":
                     System.out.println(book.toString());
                     break;
@@ -225,7 +219,7 @@ public class Test1 {
                     break;
                 case "-1":
                     break;
-                case "type": 
+                case "type":
                     System.out.println(book.getClass());
                     break;
                 default:
@@ -238,7 +232,7 @@ public class Test1 {
         String input = "";
         while (!input.equals("-1")) {
             input = scanner.nextLine();
-            switch(input) {
+            switch (input) {
                 case "print":
                     System.out.println(ebook.toString());
                     break;
@@ -280,7 +274,7 @@ public class Test1 {
                     break;
                 case "-1":
                     break;
-                case "type": 
+                case "type":
                     System.out.println(ebook.getClass());
                     break;
                 default:
@@ -289,12 +283,11 @@ public class Test1 {
         }
     }
 
-
     public static void dvd_(DVD dvd) { // too lazy to make date thingy
         String input = "";
         while (!input.equals("-1")) {
             input = scanner.nextLine();
-            switch(input) {
+            switch (input) {
                 case "print":
                     System.out.println(dvd.toString());
                     break;
@@ -336,7 +329,7 @@ public class Test1 {
                     break;
                 case "-1":
                     break;
-                case "type": 
+                case "type":
                     System.out.println(dvd.getClass());
                     break;
                 default:
@@ -349,7 +342,7 @@ public class Test1 {
         String input = "";
         while (!input.equals("-1")) {
             input = scanner.nextLine();
-            switch(input) {
+            switch (input) {
                 case "print":
                     System.out.println(videogame.toString());
                     break;
@@ -397,8 +390,8 @@ public class Test1 {
                     break;
                 case "-1":
                     break;
-                    
-                case "type": 
+
+                case "type":
                     System.out.println(videogame.getClass());
                     break;
                 default:
@@ -407,16 +400,11 @@ public class Test1 {
         }
     }
 
-
-
-
-
-
     public static void user_(User user) { // too lazy to make date thingy
         String input = "";
         while (!input.equals("-1")) {
             input = scanner.nextLine();
-            switch(input) {
+            switch (input) {
                 case "print":
                     System.out.println(user.toString());
                     break;
@@ -437,18 +425,18 @@ public class Test1 {
                     user.setAge(Integer.parseInt(scanner.nextLine()));
                     break;
                 case "birthdate":
-                    int year,month,day;
+                    int year, month, day;
                     System.out.println("Day: ");
                     day = Integer.parseInt(scanner.nextLine());
                     System.out.println("Month: ");
                     month = Integer.parseInt(scanner.nextLine());
                     System.out.println("Year: ");
                     year = Integer.parseInt(scanner.nextLine());
-                    user.setBirthDate(new Date(year,month,day));
+                    user.setBirthDate(new Date(year, month, day));
                     break;
                 case "-1":
                     break;
-                case "type": 
+                case "type":
                     System.out.println(user.getClass());
                     break;
                 default:
@@ -461,7 +449,7 @@ public class Test1 {
         String input = "";
         while (!input.equals("-1")) {
             input = scanner.nextLine();
-            switch(input) {
+            switch (input) {
                 case "print":
                     System.out.println(librarian.toString());
                     break;
@@ -482,18 +470,18 @@ public class Test1 {
                     librarian.setAge(Integer.parseInt(scanner.nextLine()));
                     break;
                 case "birthdate":
-                    int year,month,day;
+                    int year, month, day;
                     System.out.println("Day: ");
                     day = Integer.parseInt(scanner.nextLine());
                     System.out.println("Month: ");
                     month = Integer.parseInt(scanner.nextLine());
                     System.out.println("Year: ");
                     year = Integer.parseInt(scanner.nextLine());
-                    librarian.setBirthDate(new Date(year,month,day));
+                    librarian.setBirthDate(new Date(year, month, day));
                     break;
                 case "-1":
                     break;
-                case "type": 
+                case "type":
                     System.out.println(librarian.getClass());
                     break;
                 default:
@@ -506,7 +494,7 @@ public class Test1 {
         String input = "";
         while (!input.equals("-1")) {
             input = scanner.nextLine();
-            switch(input) {
+            switch (input) {
                 case "print":
                     System.out.println(borrower.toString());
                     break;
@@ -527,18 +515,18 @@ public class Test1 {
                     borrower.setAge(Integer.parseInt(scanner.nextLine()));
                     break;
                 case "birthdate":
-                    int year,month,day;
+                    int year, month, day;
                     System.out.println("Day: ");
                     day = Integer.parseInt(scanner.nextLine());
                     System.out.println("Month: ");
                     month = Integer.parseInt(scanner.nextLine());
                     System.out.println("Year: ");
                     year = Integer.parseInt(scanner.nextLine());
-                    borrower.setBirthDate(new Date(year,month,day));
+                    borrower.setBirthDate(new Date(year, month, day));
                     break;
                 case "-1":
                     break;
-                case "type": 
+                case "type":
                     System.out.println(borrower.getClass());
                     break;
                 default:
@@ -551,7 +539,7 @@ public class Test1 {
         String input = "";
         while (!input.equals("-1")) {
             input = scanner.nextLine();
-            switch(input) {
+            switch (input) {
                 case "print":
                     System.out.println(log.toString());
                     break;
@@ -570,16 +558,16 @@ public class Test1 {
                     log.setDetail(scanner.nextLine());
                     break;
                 case "date":
-                    int year,month,day;
+                    int year, month, day;
                     System.out.println("Day: ");
                     day = Integer.parseInt(scanner.nextLine());
                     System.out.println("Month: ");
                     month = Integer.parseInt(scanner.nextLine());
                     System.out.println("Year: ");
                     year = Integer.parseInt(scanner.nextLine());
-                    log.setDate(new Date(year,month,day));
+                    log.setDate(new Date(year, month, day));
                     break;
-                case "type": 
+                case "type":
                     System.out.println(log.getClass());
                     break;
                 default:
@@ -594,15 +582,12 @@ public class Test1 {
             input = scanner.nextLine();
             if (input.equals("print")) {
                 System.out.println(fee.toString());
-            }
-            else if (input.equals("type")) {
+            } else if (input.equals("type")) {
                 System.out.println(fee.getClass());
                 break;
-            }
-            else if (input.equals("-1")) {
+            } else if (input.equals("-1")) {
                 break;
-            } 
-            else {
+            } else {
                 System.out.println("No");
             }
         }
@@ -612,7 +597,7 @@ public class Test1 {
         String input = "";
         while (!input.equals("-1")) {
             input = scanner.nextLine();
-            switch(input) {
+            switch (input) {
                 case "print":
                     System.out.println(mediarecord.toString());
                     break;
@@ -627,7 +612,7 @@ public class Test1 {
                     System.out.println("Dimension 2: ");
                     int dim2 = Integer.parseInt(scanner.nextLine());
                     Log[][] borrowHistory = new Log[dim1][dim2];
-                    for (int i = 0; i  < dim1; i++) {
+                    for (int i = 0; i < dim1; i++) {
                         for (int j = 0; j < dim2; j++) {
                             Log log = new Log();
                             log_(log);
@@ -637,7 +622,7 @@ public class Test1 {
                     mediarecord.setBorrowHistory(borrowHistory);
                 case "-1":
                     break;
-                case "type": 
+                case "type":
                     System.out.println(mediarecord.getClass());
                     break;
                 default:
@@ -650,7 +635,7 @@ public class Test1 {
         String input = "";
         while (!input.equals("-1")) {
             input = scanner.nextLine();
-            switch(input) {
+            switch (input) {
                 case "print":
                     System.out.println(userrecord.toString());
                     break;
@@ -675,7 +660,7 @@ public class Test1 {
                     System.out.println("Dimension 2: ");
                     int dim2 = Integer.parseInt(scanner.nextLine());
                     Log[][] borrowHistory = new Log[dim1][dim2];
-                    for (int i = 0; i  < dim1; i++) {
+                    for (int i = 0; i < dim1; i++) {
                         for (int j = 0; j < dim2; j++) {
                             Log log = new Log();
                             log_(log);
@@ -686,7 +671,7 @@ public class Test1 {
                     break;
                 case "-1":
                     break;
-                case "type": 
+                case "type":
                     System.out.println(userrecord.getClass());
                     break;
                 default:
@@ -695,12 +680,11 @@ public class Test1 {
         }
     }
 
-
     public static void libraryrecord_(LibraryRecord libraryrecord) { // too lazy to make date thingy
         String input = "";
         while (!input.equals("-1")) {
             input = scanner.nextLine();
-            switch(input) {
+            switch (input) {
                 case "print":
                     System.out.println(libraryrecord.toString());
                     break;
@@ -727,7 +711,7 @@ public class Test1 {
                     break;
                 case "-1":
                     break;
-                case "type": 
+                case "type":
                     System.out.println(libraryrecord.getClass());
                     break;
                 default:
@@ -735,7 +719,5 @@ public class Test1 {
             }
         }
     }
-
-
 
 }
