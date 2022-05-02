@@ -1,13 +1,17 @@
-package com.culminating.payments;
+package com.culminating.payment;
 
 import java.util.Arrays;
 
 public class Transaction {
 	private static Fee[] fees;
 
-	public static void append(Fee fee) {
-		fees = Arrays.copyOf(fees, fees.length + 1);
-		fees[fees.length - 1] = fee;
+	public Transaction() {
+		Transaction.fees = new Fee[1];
+	}
+
+	public static void append(final Fee fee) {
+		(Transaction.fees = Arrays.copyOf(Transaction.fees, Transaction.fees.length + 1))[Transaction.fees.length
+				- 1] = fee;
 	}
 
 	@Override

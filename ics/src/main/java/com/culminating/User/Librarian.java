@@ -1,19 +1,18 @@
 package com.culminating.user;
 
-// All commented code will be implemented in the future when the dependencies are created
+import java.util.Date;
 
 public class Librarian extends User {
-	// private Library library;
+	public Librarian() {
+		super();
+	}
 
-	public Librarian(String name, String address, int age, String gender, String birthDate/** , Library library **/
-	) {
+	public Librarian(final String name, final String address, final int age, final String gender,
+			final Date birthDate) {
 		super(name, address, age, gender, birthDate);
-		// this.library = library
 	}
 
 	public String toString() {
-		String librarian = super.toString() /** + "\nLibrary: " + this.library **/
-		;
-		return librarian;
+		return super.toString();
 	}
 }

@@ -11,6 +11,13 @@ public class Log {
     private Date date;
     private String detail;
 
+    public Log() {
+        this.user = new User();
+        this.item = new Media();
+        this.date = new Date();
+        this.detail = "";
+    }
+
     public Log(User user, Media item, Date date, String detail) {
         this.user = user;
         this.item = item;
@@ -48,6 +55,11 @@ public class Log {
 
     public void setDetail(String detail) {
         this.detail = detail;
+    }
+
+    public String toString() {
+        return "User: " + this.user.toString() + "\nItem: " + this.item.toString() + "\nDate: " + this.date
+                + "\nDescription: " + this.detail;
     }
 
 }

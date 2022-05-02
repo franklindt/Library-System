@@ -1,39 +1,34 @@
+
+
+// 
+// Decompiled by Procyon v0.5.36
+// 
+
 package com.culminating.media;
 
 import java.util.Date;
 
-/**
- * 
- */
-public class Media {
-    /* */
-    /** */
+public class Media
+{
     private Date publishDate;
-    /** */
     private String author;
-    /** */
     private int SIN;
-    /** */
     private String language;
-    /** */
     private String publisher;
-    /** */
     private Character ageRating;
-    /** */
     private String genre;
-
-    /**
-     * 
-     * @param publishDate
-     * @param author
-     * @param SIN
-     * @param language
-     * @param publisher
-     * @param ageRating
-     * @param genre
-     */
-    public Media(Date publishDate, String author, int SIN, String language, String publisher, Character ageRating,
-            String genre) {
+    
+    public Media() {
+        this.publishDate = new Date();
+        this.author = "";
+        this.SIN = -1;
+        this.language = "";
+        this.publisher = "";
+        this.ageRating = 0;
+        this.genre = "";
+    }
+    
+    public Media(final Date publishDate, final String author, final int SIN, final String language, final String publisher, final Character ageRating, final String genre) {
         this.publishDate = publishDate;
         this.author = author;
         this.SIN = SIN;
@@ -42,112 +37,63 @@ public class Media {
         this.ageRating = ageRating;
         this.genre = genre;
     }
-
-    /**
-     * @return Date
-     */
-    /*
-     * Accessors and Mutators
-     */
-
+    
     public Date getPublishDate() {
         return this.publishDate;
     }
-
-    /**
-     * @param publishDate
-     */
-    public void setPublishDate(Date publishDate) {
+    
+    public void setPublishDate(final Date publishDate) {
         this.publishDate = publishDate;
     }
-
-    /**
-     * @return String
-     */
+    
     public String getAuthor() {
         return this.author;
     }
-
-    /**
-     * @param author
-     */
-    public void setAuthor(String author) {
+    
+    public void setAuthor(final String author) {
         this.author = author;
     }
-
-    /**
-     * @return int
-     */
+    
     public int getSIN() {
         return this.SIN;
     }
-
-    /**
-     * @param SIN
-     */
-    public void setSIN(int SIN) {
+    
+    public void setSIN(final int SIN) {
         this.SIN = SIN;
     }
-
-    /**
-     * @return String
-     */
+    
     public String getLanguage() {
         return this.language;
     }
-
-    /**
-     * @param language
-     */
-    public void setLanguage(String language) {
+    
+    public void setLanguage(final String language) {
         this.language = language;
     }
-
-    /**
-     * @return String
-     */
+    
     public String getPublisher() {
         return this.publisher;
     }
-
-    /**
-     * @param publisher
-     */
-    public void setPublisher(String publisher) {
+    
+    public void setPublisher(final String publisher) {
         this.publisher = publisher;
     }
-
-    /**
-     * @return Character
-     */
+    
     public Character getAgeRating() {
         return this.ageRating;
     }
-
-    /**
-     * @param ageRating
-     */
-    public void setAgeRating(Character ageRating) {
+    
+    public void setAgeRating(final Character ageRating) {
         this.ageRating = ageRating;
     }
-
-    /**
-     * @return String
-     */
+    
     public String getGenre() {
         return this.genre;
     }
-
-    /**
-     * @param genre
-     */
-    public void setGenre(String genre) {
+    
+    public void setGenre(final String genre) {
         this.genre = genre;
     }
-
-    /**
-     * @return String
-     */
+    
     @Override
     public String toString() {
         return "{" +
@@ -159,6 +105,6 @@ public class Media {
                 ", ageRating='" + getAgeRating() + "'" +
                 ", genre='" + getGenre() + "'" +
                 "}";
+        }
     }
 
-}

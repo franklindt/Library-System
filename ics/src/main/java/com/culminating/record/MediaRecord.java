@@ -7,6 +7,12 @@ public class MediaRecord {
     private Log[][] borrowHistory;
     private Media item;
 
+    public MediaRecord() {
+        this.item = new Media();
+        this.borrowHistory = new Log[1][1];
+        this.borrowHistory[0][0] = new Log();
+    }
+
     public MediaRecord(Log[][] borrowHistory, Media item) {
         this.borrowHistory = borrowHistory;
         this.item = item;
@@ -26,6 +32,18 @@ public class MediaRecord {
 
     public void setItem(Media item) {
         this.item = item;
+    }
+
+    public String toString() {
+        String ret = "";
+        ret += "Item: " + this.item.toString() + "\n";
+        for (int i = 0; i < this.borrowHistory.length; i++) {
+            for (int j = 0; j < this.borrowHistory[i].length; j++) {
+                ret += this.borrowHistory[i][j].toString() + ",";
+            }
+        }
+        ret = ret.substring(0, ret.length() - 1);
+        return ret;
     }
 
 }
