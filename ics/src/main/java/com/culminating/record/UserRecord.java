@@ -4,7 +4,11 @@ import java.util.Date;
 
 import com.culminating.media.Media;
 import com.culminating.user.User;
+<<<<<<< HEAD
 import com.culminating.payment.Fee;
+=======
+import com.culminating.payments.Fee;
+>>>>>>> 65e9aac3aebef72afa5ffa49694ee2c6479b62fc
 import com.culminating.utils.Log;
 
 public class UserRecord {
