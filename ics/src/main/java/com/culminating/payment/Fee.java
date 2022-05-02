@@ -31,6 +31,9 @@ public class Fee {
         this.fulfilled = fulfilled;
     }
 
+    /**
+     * 
+     */
     public void pay() {
         this.fulfilled = true;
     }

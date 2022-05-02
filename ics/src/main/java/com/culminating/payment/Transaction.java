@@ -1,25 +1,24 @@
 package com.culminating.payment;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 
 public class Transaction {
-	private static Fee[] fees;
+	private ArrayList<Fee> fees;
 
 	public Transaction() {
-		Transaction.fees = new Fee[1];
+		this.fees = new ArrayList<Fee>();
 	}
 
-	public static void append(final Fee fee) {
-		(Transaction.fees = Arrays.copyOf(Transaction.fees, Transaction.fees.length + 1))[Transaction.fees.length
-				- 1] = fee;
+	public void createFee(Fee fee) {
+		fees.add(fee);
 	}
 
 	@Override
 	public String toString() {
 		String allFees = "";
 		String raw_block = "";
-		for (int i = 0; i < fees.length; i++) {
-			raw_block = fees[i].toString().replace("\n", "");
+		for (int i = 0; i < fees.size(); i++) {
+			raw_block = fees.get(i).toString().replace("\n", "");
 		}
 		allFees += raw_block + "\n";
 		return allFees;
