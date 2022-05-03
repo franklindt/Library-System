@@ -6,8 +6,9 @@ import com.culminating.record.*;
 import com.culminating.user.*;
 import com.culminating.utils.*;
 
+import java.util.ArrayList;
 import java.util.Date;
-
+import java.util.List;
 import java.util.Scanner;
 
 public class Test1 {
@@ -607,17 +608,13 @@ public class Test1 {
                     mediarecord.setItem(media);
                     break;
                 case "history":
-                    System.out.println("Dimension 1: ");
-                    int dim1 = Integer.parseInt(scanner.nextLine());
-                    System.out.println("Dimension 2: ");
-                    int dim2 = Integer.parseInt(scanner.nextLine());
-                    Log[][] borrowHistory = new Log[dim1][dim2];
-                    for (int i = 0; i < dim1; i++) {
-                        for (int j = 0; j < dim2; j++) {
-                            Log log = new Log();
-                            log_(log);
-                            borrowHistory[i][j] = log;
-                        }
+                    System.out.println("Dimension: ");
+                    int dim = Integer.parseInt(scanner.nextLine());
+                    List<Log> borrowHistory = new ArrayList<>(dim);
+                    for (int i = 0; i < dim; i++) {
+                        Log log = new Log();
+                        log_(log);
+                        borrowHistory.set(i, log);
                     }
                     mediarecord.setBorrowHistory(borrowHistory);
                 case "-1":
@@ -647,25 +644,21 @@ public class Test1 {
                 case "fees":
                     System.out.println("Amount of fees: ");
                     int fees_qty = Integer.parseInt(scanner.nextLine());
-                    Fee[] fees = new Fee[fees_qty];
+                    List<Fee> fees = new ArrayList<>(fees_qty);
                     for (int i = 0; i < fees_qty; i++) {
-                        fees[i] = new Fee();
-                        fee_(fees[i]);
+                        fees.set(i, new Fee());
+                        fee_(fees.get(i));
                     }
                     userrecord.setPastFees(fees);
                     break;
                 case "history":
-                    System.out.println("Dimension 1: ");
-                    int dim1 = Integer.parseInt(scanner.nextLine());
-                    System.out.println("Dimension 2: ");
-                    int dim2 = Integer.parseInt(scanner.nextLine());
-                    Log[][] borrowHistory = new Log[dim1][dim2];
-                    for (int i = 0; i < dim1; i++) {
-                        for (int j = 0; j < dim2; j++) {
-                            Log log = new Log();
-                            log_(log);
-                            borrowHistory[i][j] = log;
-                        }
+                    System.out.println("Dimension: ");
+                    int dim = Integer.parseInt(scanner.nextLine());
+                    List<Log> borrowHistory = new ArrayList<>(dim);
+                    for (int i = 0; i < dim; i++) {
+                        Log log = new Log();
+                        log_(log);
+                        borrowHistory.set(i, log);
                     }
                     userrecord.setBorrowHistory(borrowHistory);
                     break;
