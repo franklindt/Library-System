@@ -1,8 +1,8 @@
 package com.culminating.utils;
 
-import com.culminating.User.User;
 import com.culminating.media.Media;
 import com.culminating.payment.Fee;
+import com.culminating.user.User;
 
 import java.util.Date;
 import java.util.ArrayList;
@@ -25,7 +25,6 @@ public class Handler {
 		this.itemStates = itemStates;
 	}
 
-
 	private int searchItemStates(Media media) {
 		for (int i = 0; i < this.itemStates.size(); i++) {
 			if (this.itemStates.get(i).getItem().getSIN() == media.getSIN()) {
@@ -34,7 +33,6 @@ public class Handler {
 		}
 		return -1;
 	}
-
 
 	public void addHold(Date date, Media media, User user) {
 		currHolds.add(new Hold(user, media, date, "hold", false));
@@ -52,19 +50,25 @@ public class Handler {
 
 	public void renew(User user, Media media) {
 		int index = searchItemStates(media);
-		if (index == -1 || itemStates.get(index).getUser().getName() != user.getName()) {return;}
+		if (index == -1 || itemStates.get(index).getUser().getName() != user.getName()) {
+			return;
+		}
 		this.itemStates.get(index).renew(user);
 	}
 
 	public void checkOut(User user, Media media) {
 		int index = searchItemStates(media);
-		if (index == -1 || !this.itemStates.get(index).getStatus()) {return;}
+		if (index == -1 || !this.itemStates.get(index).getStatus()) {
+			return;
+		}
 		this.itemStates.get(index).checkOut(user, new Date());
 	}
 
 	public void checkIn(User user, Media media) {
 		int index = searchItemStates(media);
-		if (index == -1) {return;}
+		if (index == -1) {
+			return;
+		}
 		this.itemStates.get(index).checkIn(user, new Date());
 	}
 }

@@ -2,18 +2,18 @@ package com.culminating.utils;
 
 import java.util.Date;
 
-import com.culminating.User.User;
+import com.culminating.user.User;
 import com.culminating.media.Media;
 
 public class Hold extends Log {
-	private boolean arrived;
+    private boolean arrived;
 
-	public Hold() {
-		super();
-		this.arrived = false;
-	}
+    public Hold() {
+        super();
+        this.arrived = false;
+    }
 
-    public Hold(User user, Media item, Date date, String detail,boolean arrived) {
+    public Hold(User user, Media item, Date date, String detail, boolean arrived) {
         super(user, item, date, detail);
         this.arrived = arrived;
     }
