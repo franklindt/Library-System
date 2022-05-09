@@ -39,6 +39,7 @@ public class Fee {
     }
 
 
+
     public User getRecipient() {
         return this.recipient;
     }
@@ -90,6 +91,7 @@ public class Fee {
     public void setFulfilled(boolean fulfilled) {
         this.fulfilled = fulfilled;
     }
+    
 
     @Override
     public String toString() {
