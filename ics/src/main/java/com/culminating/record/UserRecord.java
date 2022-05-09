@@ -1,3 +1,9 @@
+/**
+*Name(s): Franklin, Mike, Grace, Sophia
+*Date: 2022-05-04
+*Description: User Record class
+*/
+
 package com.culminating.record;
 
 import java.util.ArrayList;
