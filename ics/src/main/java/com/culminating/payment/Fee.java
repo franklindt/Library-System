@@ -39,57 +39,6 @@ public class Fee {
     }
 
 
-    public User getRecipient() {
-        return this.recipient;
-    }
-
-    public void setRecipient(User recipient) {
-        this.recipient = recipient;
-    }
-
-    public Media[] getItem() {
-        return this.item;
-    }
-
-    public void setItem(Media[] item) {
-        this.item = item;
-    }
-
-    public double getAmount() {
-        return this.amount;
-    }
-
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
-
-    public Date getDate() {
-        return this.date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public String getDetails() {
-        return this.details;
-    }
-
-    public void setDetails(String details) {
-        this.details = details;
-    }
-
-    public boolean isFulfilled() {
-        return this.fulfilled;
-    }
-
-    public boolean getFulfilled() {
-        return this.fulfilled;
-    }
-
-    public void setFulfilled(boolean fulfilled) {
-        this.fulfilled = fulfilled;
-    }
 
     public User getRecipient() {
         return this.recipient;
@@ -142,6 +91,7 @@ public class Fee {
     public void setFulfilled(boolean fulfilled) {
         this.fulfilled = fulfilled;
     }
+    
 
     @Override
     public String toString() {

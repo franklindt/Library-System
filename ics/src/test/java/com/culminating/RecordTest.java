@@ -1,5 +1,7 @@
 package com.culminating;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -52,11 +54,33 @@ public class RecordTest {
         /*****************
          * Test LibraryRecord
          *****************/
+
+         /**
+          * 
+          */
         @Test
-        public void testRetrieval() {
+        public void testUserRetrieval() {
                 testLogs.add(testLog);
                 testLogs.add(testLog2);
                 testPastFees.add(testFee);
+                UserRecord[] testUserRecords = testLibraryRecord.getUserRecords();
+                for (UserRecord userRecord : testUserRecords) {
+                        assertEquals(testUser, userRecord.getOwner());
+                }
+        }
+
+        /**
+         * 
+         */
+        @Test
+        public void testMediaRetrieval() {
+                testLogs.add(testLog);
+                testLogs.add(testLog2);
+                testPastFees.add(testFee);
+                MediaRecord[] testMediaRecords = testLibraryRecord.getMediaRecords();
+                for (MediaRecord mediaRecord : testMediaRecords) {
+                        assertEquals("Mr. Lee", mediaRecord.getItem().getAuthor());
+                }
         }
 
 }
