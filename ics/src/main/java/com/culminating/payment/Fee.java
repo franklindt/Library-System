@@ -2,7 +2,7 @@ package com.culminating.payment;
 
 import java.util.Date;
 import com.culminating.media.Media;
-import com.culminating.User.User;
+import com.culminating.user.User;
 
 public class Fee {
     private User recipient;

@@ -1,4 +1,4 @@
-package com.culminating.User;
+package com.culminating.user;
 
 import java.util.Date;
 

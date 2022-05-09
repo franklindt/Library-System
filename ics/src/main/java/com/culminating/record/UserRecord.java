@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.culminating.media.Media;
-import com.culminating.User.User;
+import com.culminating.user.User;
 import com.culminating.payment.Fee;
 import com.culminating.utils.Log;
 
