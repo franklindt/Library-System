@@ -3,7 +3,7 @@ package com.culminating.utils;
 import java.util.Date;
 
 import com.culminating.media.Media;
-import com.culminating.user.User;
+import com.culminating.User.User;
 
 public class Log {
     private User user;

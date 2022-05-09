@@ -13,14 +13,6 @@ public class Transaction {
 		fees.add(fee);
 	}
 
-	public ArrayList<Fee> getFees() {
-		return this.fees;
-	}
-
-	public void setFees(ArrayList<Fee> fees) {
-		this.fees = fees;
-	}
-
 	@Override
 	public String toString() {
 		String allFees = "";
