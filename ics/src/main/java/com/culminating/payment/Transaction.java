@@ -21,7 +21,7 @@ public class Transaction {
 	}
 
 	/**
-	 * Creates a Fee in the Transaction log 
+	 * Creates a Fee in the Transaction log
 	 * 
 	 * @param fee -> a Fee object
 	 */
@@ -31,6 +31,7 @@ public class Transaction {
 
 	/**
 	 * Gets the transactions
+	 * 
 	 * @return -> a the list of Transactions
 	 */
 	public ArrayList<Fee> getFees() {
@@ -39,6 +40,7 @@ public class Transaction {
 
 	/**
 	 * Sets the transactions of Fees
+	 * 
 	 * @param fees
 	 */
 	public void setFees(ArrayList<Fee> fees) {
@@ -46,7 +48,8 @@ public class Transaction {
 	}
 
 	/**
-	 * @return -> string representation of this class, shows all the Fee objects in the transaction list
+	 * @return -> string representation of this class, shows all the Fee objects in
+	 *         the transaction list
 	 */
 	@Override
 	public String toString() {
