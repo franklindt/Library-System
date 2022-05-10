@@ -43,6 +43,7 @@ public class RecordTest {
     ArrayList<Log> testLogs = new ArrayList<>();
     ArrayList<Fee> testPastFees = new ArrayList<>();
 
+<<<<<<< HEAD
     UserRecord testUserRecord = new UserRecord(testUser, testPastFees, testLogs);
     MediaRecord testMediaRecord = new MediaRecord(testLogs,
             new Media(new Date(1942, 4, 21), "Mr. Lee", 9328, "en-ca", "random house",
@@ -50,11 +51,21 @@ public class RecordTest {
                     "Comedy"));
     LibraryRecord testLibraryRecord = new LibraryRecord(new UserRecord[] { testUserRecord },
             new MediaRecord[] { testMediaRecord });
+=======
+        UserRecord testUserRecord = new UserRecord(testUser, testPastFees, testLogs);
+        MediaRecord testMediaRecord = new MediaRecord(testLogs,
+                        new Media(new Date(1942, 4, 21), "Mr. Lee", 9328, "en-ca", "random house",
+                                        Character.valueOf('E'),
+                                        "Comedy"));
+        LibraryRecord testLibraryRecord = new LibraryRecord(new ArrayList<UserRecord>(),
+                        new ArrayList<MediaRecord>());
+>>>>>>> final
 
     /*****************
      * Test LibraryRecord
      *****************/
 
+<<<<<<< HEAD
     /**
      * 
      */
@@ -66,9 +77,24 @@ public class RecordTest {
         UserRecord[] testUserRecords = testLibraryRecord.getUserRecords();
         for (UserRecord userRecord : testUserRecords) {
             assertEquals(testUser, userRecord.getOwner());
+=======
+         /**
+          * 
+          */
+        @Test
+        public void testUserRetrieval() {
+                testLogs.add(testLog);
+                testLogs.add(testLog2);
+                testPastFees.add(testFee);
+                ArrayList<UserRecord> testUserRecords = testLibraryRecord.getUserRecords();
+                for (UserRecord userRecord : testUserRecords) {
+                        assertEquals(testUser, userRecord.getOwner());
+                }
+>>>>>>> final
         }
     }
 
+<<<<<<< HEAD
     /**
      * 
      */
@@ -80,6 +106,20 @@ public class RecordTest {
         MediaRecord[] testMediaRecords = testLibraryRecord.getMediaRecords();
         for (MediaRecord mediaRecord : testMediaRecords) {
             assertEquals("Mr. Lee", mediaRecord.getItem().getAuthor());
+=======
+        /**
+         * 
+         */
+        @Test
+        public void testMediaRetrieval() {
+                testLogs.add(testLog);
+                testLogs.add(testLog2);
+                testPastFees.add(testFee);
+                ArrayList<MediaRecord> testMediaRecords = testLibraryRecord.getMediaRecords();
+                for (MediaRecord mediaRecord : testMediaRecords) {
+                        assertEquals("Mr. Lee", mediaRecord.getItem().getAuthor());
+                }
+>>>>>>> final
         }
     }
 

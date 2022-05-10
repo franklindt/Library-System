@@ -6,21 +6,21 @@
 
 package com.culminating.record;
 
+import java.util.ArrayList;
+
 /**
  * Stores the Media and User records
  */
 public class LibraryRecord {
-    private UserRecord[] userRecords;
-    private MediaRecord[] mediaRecords;
+    private ArrayList<UserRecord> userRecords;
+    private ArrayList<MediaRecord> mediaRecords;
 
     /**
      * Default constructor
      */
     public LibraryRecord() {
-        this.userRecords = new UserRecord[1];
-        this.userRecords[0] = new UserRecord();
-        this.mediaRecords = new MediaRecord[1];
-        this.mediaRecords[0] = new MediaRecord();
+        this.userRecords = new ArrayList<UserRecord>();
+        this.mediaRecords = new ArrayList<MediaRecord>();
     }
 
     /**
@@ -29,7 +29,7 @@ public class LibraryRecord {
      * @param userRecords  -> user records
      * @param mediaRecords -> media records
      */
-    public LibraryRecord(UserRecord[] userRecords, MediaRecord[] mediaRecords) {
+    public LibraryRecord(ArrayList<UserRecord> userRecords, ArrayList<MediaRecord> mediaRecords) {
         this.userRecords = userRecords;
         this.mediaRecords = mediaRecords;
     }
@@ -39,7 +39,7 @@ public class LibraryRecord {
      * 
      * @return UserRecord[]
      */
-    public UserRecord[] getUserRecords() {
+    public ArrayList<UserRecord> getUserRecords() {
         return this.userRecords;
     }
 
@@ -48,7 +48,7 @@ public class LibraryRecord {
      * 
      * @param userRecords -> userRecord to be set
      */
-    public void setUserRecords(UserRecord[] userRecords) {
+    public void setUserRecords(ArrayList<UserRecord> userRecords) {
         this.userRecords = userRecords;
     }
 
@@ -57,7 +57,7 @@ public class LibraryRecord {
      * 
      * @return MediaRecord[] -> media record array
      */
-    public MediaRecord[] getMediaRecords() {
+    public ArrayList<MediaRecord> getMediaRecords() {
         return this.mediaRecords;
     }
 
@@ -66,8 +66,16 @@ public class LibraryRecord {
      * 
      * @param mediaRecords -> mediaRecord to be set
      */
-    public void setMediaRecords(MediaRecord[] mediaRecords) {
+    public void setMediaRecords(ArrayList<MediaRecord> mediaRecords) {
         this.mediaRecords = mediaRecords;
+    }
+
+    public void mediaRecordsAppend(MediaRecord mediarecord) {
+        this.mediaRecords.add(mediarecord);
+    }
+
+    public void userRecordsAppend(UserRecord userrecord) {
+        this.userRecords.add(userrecord);
     }
 
     /**
@@ -78,12 +86,12 @@ public class LibraryRecord {
     public String toString() {
         String ret = "";
         ret += "Media Records: ";
-        for (int i = 0; i < this.mediaRecords.length; i++) {
-            ret += mediaRecords[i].toString() + ",";
+        for (int i = 0; i < this.mediaRecords.size(); i++) {
+            ret += mediaRecords.get(i).toString() + ",";
         }
         ret = ret.substring(0, ret.length() - 1);
-        for (int i = 0; i < this.userRecords.length; i++) {
-            ret += userRecords[i].toString() + ",";
+        for (int i = 0; i < this.userRecords.size(); i++) {
+            ret += userRecords.get(i).toString() + ",";
         }
         ret = ret.substring(0, ret.length() - 1);
         return ret;
