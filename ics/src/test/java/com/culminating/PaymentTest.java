@@ -1,47 +1,51 @@
 package com.culminating;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
 import java.util.Date;
 
+import com.culminating.payment.*;
+
 import com.culminating.media.Media;
-import com.culminating.payment.Fee;
-import com.culminating.payment.Transaction;
 import com.culminating.user.User;
 
 import org.junit.Test;
 
 /**
- * 
+ * Unit test for the Payment Classes
  */
+
 public class PaymentTest {
 
-    User testUser = new User("Jane Smith", "109 Royal Road", 24, "female", new Date(2000, 11, 21));
-
-    /*****************
+    /**
      * Test Fee
-     *****************/
-    Fee testFee = new Fee(testUser,
-            new Media[] {
-                    new Media(new Date(1942, 4, 21), "Mr. Lee", 9328, "en-ca", "random house", Character.valueOf('E'),
-                            "Comedy") },
-            67.32, new Date(2022, 4, 21), "Overdue", false);
+     */
 
-    @Test
-    public void testPay() {
-        testFee.pay();
-        assertEquals(true, testFee.getFulfilled());
+    private Fee fee = new Fee(new User("grace", "big house place", 10, "gender", new Date()), new ArrayList<Media>(),
+            6.9, new Date(), "details", false);
+
+    public void testFeeAttributes() {
+        assertEquals("com.culminating.user.User", fee.getRecipient().getClass());
+        assertEquals(6.9, fee.getAmount());
+        assertArrayEquals(new ArrayList<Media>().toArray(), fee.getItem());
     }
 
-    /*****************
+    /**
      * Test Transaction
-     *****************/
-    Transaction testTransaction = new Transaction();
+     */
 
-    @Test
-    public void testTransaction() {
-        testTransaction.createFee(testFee);
-        assertEquals(testFee,
-                testTransaction.getFees().get(0));
+    private Transaction transaction = new Transaction();
+
+    public void testTransactionAttributes() {
+        assertArrayEquals(new ArrayList<Fee>().toArray(), transaction.getFees().toArray());
     }
+
+    public void testTransactionCreateFee() {
+        fee.createFee(new Fee(new User("name", "address", 1, "gender", new Date()), new ArrayList<Media>(), 6.9,
+                new Date(), "details", false));
+        assertEquals("name", transaction.getFees().get(0).getRecipient().getName());
+    }
+
 }
