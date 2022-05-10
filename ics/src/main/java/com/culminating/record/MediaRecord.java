@@ -1,8 +1,8 @@
 /**
-*Name(s): Franklin, Mike, Grace, Sophia
-*Date: 2022-05-04
-*Description: Media record class
-*/
+ * Name(s): Franklin, Mike, Grace, Sophia
+ * Date: 2022-05-04
+ * Description: Media record class
+ */
 
 package com.culminating.record;
 
@@ -17,7 +17,7 @@ import com.culminating.media.Media;
 import com.culminating.utils.Log;
 
 /**
- * Represents borrow history of a particular Media item
+ * Represents the borrow history of a particular Media item
  */
 public class MediaRecord {
     /** List of Logs which form the borrowing history of the Media Item */
@@ -64,12 +64,14 @@ public class MediaRecord {
      * @return Media -> the most popular media object
      */
     public Media getPopularItem() {
-        List<Log> tempLog = this.borrowHistory;
+        List<Log> tempLog = getBorrowHistory(); // Stores the borrow history of this Media item in a temporary List
 
-        Map<Media, Integer> popularMap = new HashMap<>();
+        Map<Media, Integer> popularMap = new HashMap<>(); // Maps the amount of times a media item appears in the borrow
+                                                          // history
 
-        Media popularMedia = new Media();
+        Media popularMedia = new Media(); // Create a default media object to store the most popular media
 
+        // Iterate through the borrowing history and increment the count in the hashmap
         for (int i = 0; i < tempLog.size(); i++) {
             Log checkout = tempLog.get(i);
             Media item = checkout.getItem();
@@ -77,13 +79,18 @@ public class MediaRecord {
             popularMap.putIfAbsent(item, count + 1);
         }
 
+        // Find the highest count in the value side of the key-value pair in the hashmap
         int maxValue = Collections.max(popularMap.values());
+
+        // Iterate through the key-value pairs and if any one of the values match the
+        // maxValue, then pull out the key (Media object) and store it in the
+        // popularMedia object
         for (Entry<Media, Integer> entry : popularMap.entrySet()) {
             if (entry.getValue() == maxValue) {
                 popularMedia = entry.getKey();
             }
         }
-        return popularMedia;
+        return popularMedia; // return the most popular Media item
     }
 
     /**
@@ -123,16 +130,19 @@ public class MediaRecord {
     }
 
     /**
-     * @return -> String representation of every item in MediaRecord
+     * Stringify the MediaRecord object
+     * 
+     * @return String -> String representation of every attribute in MediaRecord
      */
     public String toString() {
         String ret = "";
         ret += "Item: " + this.item.toString() + "\n";
-        for (int i = 0; i < this.borrowHistory.size(); i++) {
+        for (int i = 0; i < this.borrowHistory.size(); i++) { // Iterate over the borrow history and call the Log
+                                                              // toString() to add to the string
             ret += this.borrowHistory.get(i).toString() + ",";
         }
-        ret = ret.substring(0, ret.length() - 1);
-        return ret;
+        ret = ret.substring(0, ret.length() - 1); // Trim the final string
+        return ret; // return the string
     }
 
 }
