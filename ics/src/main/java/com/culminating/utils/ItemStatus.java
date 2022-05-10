@@ -15,15 +15,15 @@ import com.culminating.user.User;
 import com.culminating.media.Media;
 
 public class ItemStatus extends Log {
-    private boolean status; //the status of the item
-    private int times_renewed; //the number of times the item has been renewed
+   private boolean status; //the status of the item
+   private int times_renewed; //the number of times the item has been renewed
 
    /**
    *Default constructor a itemStatus: call superclass log
    *sets status to false
    *sets times renewed to -1
    */
-    public ItemStatus() {
+   public ItemStatus() {
 	super();
 	this.status = false;
         this.times_renewed = -1;
