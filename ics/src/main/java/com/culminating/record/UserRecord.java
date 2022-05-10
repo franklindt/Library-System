@@ -86,47 +86,59 @@ public class UserRecord {
         this.borrowHistory = tempBorrowHistory;
     }
 
-    /**
-     * @return User
-     */
     /*
      * Accessors and Mutators
      */
 
+    /**
+     * gets the user
+     * 
+     * @return User -> user associated with this user record
+     */
     public User getOwner() {
         return this.owner;
     }
 
     /**
-     * @param owner
+     * sets the owner
+     * 
+     * @param owner -> changes owner associated with this user record
      */
     public void setOwner(User owner) {
         this.owner = owner;
     }
 
     /**
-     * @return List<Fee>
+     * gets the fee history
+     * 
+     * @return List<Fee> -> fee history
      */
     public List<Fee> getPastFees() {
         return this.pastFees;
     }
 
     /**
-     * @param pastFees
+     * sets a new fee history
+     * 
+     * @param pastFees -> fee history to be set
      */
     public void setPastFees(List<Fee> pastFees) {
         this.pastFees = pastFees;
     }
 
     /**
-     * @return List<Log>
+     * get the borrow history
+     * 
+     * @return List<Log> -> borrow history
      */
     public List<Log> getBorrowHistory() {
         return this.borrowHistory;
     }
 
     /**
-     * @param borrowHistory
+     * set borrow history
+     * 
+     * @param borrowHistory -> borrow history to be set
      */
     public void setBorrowHistory(List<Log> borrowHistory) {
         this.borrowHistory = borrowHistory;
