@@ -35,9 +35,9 @@ public class LibraryRecord {
     }
 
     /**
-     * gets the user record
+     * gets the user records
      * 
-     * @return UserRecord[]
+     * @return ArrayList<UserRecord>
      */
     public ArrayList<UserRecord> getUserRecords() {
         return this.userRecords;
@@ -55,7 +55,7 @@ public class LibraryRecord {
     /**
      * gets the media record
      * 
-     * @return MediaRecord[] -> media record array
+     * @return ArrayList<MediaRecord> -> media record array
      */
     public ArrayList<MediaRecord> getMediaRecords() {
         return this.mediaRecords;

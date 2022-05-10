@@ -35,6 +35,11 @@ public class MediaRecord {
         this.borrowHistory.set(0, new Log());
     }
 
+    /**
+     * Default constructor
+     * 
+     * @param item -> media item to be associated with the record
+     */
     public MediaRecord(Media item) {
         this.item = item;
         this.borrowHistory = new ArrayList<Log>();
@@ -91,7 +96,7 @@ public class MediaRecord {
     }
 
     /**
-     * 
+     * Sets the new borrow history
      * 
      * @param borrowHistory
      */
