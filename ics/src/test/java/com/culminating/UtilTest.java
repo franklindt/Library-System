@@ -81,6 +81,7 @@ public class UtilTest {
      */
 
     private final Handler handler = new Handler(new ArrayList<Hold>(), new ArrayList<Fee>(),
-            new ArrayList<ItemStatus>());
+            new ArrayList<ItemStatus>(),
+            new ArrayList<User>());
 
 }
