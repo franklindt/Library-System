@@ -1,8 +1,8 @@
 /**
-*Name(s): Franklin, Mike, Grace, Sophia
-*Date: 2022-05-04
-*Description: User Record class
-*/
+ * Name(s): Franklin, Mike, Grace, Sophia
+ * Date: 2022-05-04
+ * Description: User Record class
+ */
 
 package com.culminating.record;
 
@@ -27,7 +27,8 @@ public class UserRecord {
     private List<Log> borrowHistory;
 
     /**
-     * Creates a UserRecord object containing all the details associated with User
+     * Empty constructor initializes a default user record containing empty past
+     * fees and borrow history
      */
     public UserRecord() {
         this.owner = new User();
@@ -35,6 +36,12 @@ public class UserRecord {
         this.borrowHistory = new ArrayList<Log>();
     }
 
+    /**
+     * Creates a UserRecord object containing all the details associated with User
+     * 
+     * @param owner -> the user object to be associated with the fee history and
+     *              borrow history
+     */
     public UserRecord(User owner) {
         this.owner = owner;
         this.pastFees = new ArrayList<Fee>();
@@ -91,7 +98,7 @@ public class UserRecord {
      */
 
     /**
-     * gets the user
+     * Gets the user
      * 
      * @return User -> user associated with this user record
      */
@@ -100,7 +107,7 @@ public class UserRecord {
     }
 
     /**
-     * sets the owner
+     * Sets the owner
      * 
      * @param owner -> changes owner associated with this user record
      */
@@ -109,7 +116,7 @@ public class UserRecord {
     }
 
     /**
-     * gets the fee history
+     * Gets the fee history
      * 
      * @return List<Fee> -> fee history
      */
@@ -118,7 +125,7 @@ public class UserRecord {
     }
 
     /**
-     * sets a new fee history
+     * Sets a new fee history
      * 
      * @param pastFees -> fee history to be set
      */
@@ -127,7 +134,7 @@ public class UserRecord {
     }
 
     /**
-     * get the borrow history
+     * Get the borrow history
      * 
      * @return List<Log> -> borrow history
      */
@@ -136,7 +143,7 @@ public class UserRecord {
     }
 
     /**
-     * set borrow history
+     * Set borrow history
      * 
      * @param borrowHistory -> borrow history to be set
      */
@@ -147,19 +154,22 @@ public class UserRecord {
     /**
      * String representation of the UserRecord
      * 
-     * @return String
+     * @return String -> returns a string representation of every attribute in
+     *         UserRecord
      */
     public String toString() {
-        String ret = "";
+        String ret = ""; // string to be built
         ret += "User: " + this.owner.toString() + "\nFees: ";
-        for (int i = 0; i < this.pastFees.size(); i++) {
+        for (int i = 0; i < this.pastFees.size(); i++) { // iterate over all the fee history and append to string by
+                                                         // calling the Fee object toString()
             ret += pastFees.get(i).toString() + ",";
         }
-        for (int i = 0; i < this.borrowHistory.size(); i++) {
+        for (int i = 0; i < this.borrowHistory.size(); i++) { // iterate over all the borrow history and append to
+                                                              // string by calling the Log object toString()
             ret += this.borrowHistory.get(i).toString() + ",";
         }
-        ret = ret.substring(0, ret.length() - 1);
-        return ret;
+        ret = ret.substring(0, ret.length() - 1); // Trim the string
+        return ret; // Return the string
     }
 
 }
