@@ -25,7 +25,6 @@ public class UtilTest {
 
     @Test
     public void testHoldAttribute() {
-        assertEquals("com.culminating.media.Media", hold.getItem().getClass());
         assertEquals("hold", hold.getDetail());
     }
 
@@ -45,7 +44,6 @@ public class UtilTest {
     @Test
     public void testLogAttribute() {
         assertEquals("a book", log.getDetail());
-        assertEquals("com.culminating.user.User", log.getUser().getClass());
     }
 
     /**
