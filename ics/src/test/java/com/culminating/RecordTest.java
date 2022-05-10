@@ -20,38 +20,29 @@ import org.junit.Test;
  */
 public class RecordTest {
 
-    User testUser = new User("Jane Smith", "109 Royal Road", 24, "female", new Date(2000, 11, 21));
+        User testUser = new User("Jane Smith", "109 Royal Road", 24, "female", new Date(2000, 11, 21));
 
-    Fee testFee = new Fee(testUser,
-            new Media[] {
-                    new Media(new Date(1942, 4, 21), "Mr. Lee", 9328, "en-ca", "random house",
-                            Character.valueOf('E'),
-                            "Comedy") },
-            67.32, new Date(2022, 4, 21), "Overdue", false);
+        Fee testFee = new Fee(testUser,
+                        new Media[] {
+                                        new Media(new Date(1942, 4, 21), "Mr. Lee", 9328, "en-ca", "random house",
+                                                        Character.valueOf('E'),
+                                                        "Comedy") },
+                        67.32, new Date(2022, 4, 21), "Overdue", false);
 
-    Log testLog = new Log(testUser,
-            new Media(new Date(1942, 4, 21), "Mr. Lee", 9328, "en-ca", "random house",
-                    Character.valueOf('E'),
-                    "Comedy"),
-            new Date(2022, 4, 21), "checkout");
-    Log testLog2 = new Log(testUser,
-            new Media(new Date(1942, 4, 21), "Mr. Lee", 9328, "en-ca", "random house",
-                    Character.valueOf('E'),
-                    "Comedy"),
-            new Date(1942, 4, 21), "checkout");
+        Log testLog = new Log(testUser,
+                        new Media(new Date(1942, 4, 21), "Mr. Lee", 9328, "en-ca", "random house",
+                                        Character.valueOf('E'),
+                                        "Comedy"),
+                        new Date(2022, 4, 21), "checkout");
+        Log testLog2 = new Log(testUser,
+                        new Media(new Date(1942, 4, 21), "Mr. Lee", 9328, "en-ca", "random house",
+                                        Character.valueOf('E'),
+                                        "Comedy"),
+                        new Date(1942, 4, 21), "checkout");
 
-    ArrayList<Log> testLogs = new ArrayList<>();
-    ArrayList<Fee> testPastFees = new ArrayList<>();
+        ArrayList<Log> testLogs = new ArrayList<>();
+        ArrayList<Fee> testPastFees = new ArrayList<>();
 
-<<<<<<< HEAD
-    UserRecord testUserRecord = new UserRecord(testUser, testPastFees, testLogs);
-    MediaRecord testMediaRecord = new MediaRecord(testLogs,
-            new Media(new Date(1942, 4, 21), "Mr. Lee", 9328, "en-ca", "random house",
-                    Character.valueOf('E'),
-                    "Comedy"));
-    LibraryRecord testLibraryRecord = new LibraryRecord(new UserRecord[] { testUserRecord },
-            new MediaRecord[] { testMediaRecord });
-=======
         UserRecord testUserRecord = new UserRecord(testUser, testPastFees, testLogs);
         MediaRecord testMediaRecord = new MediaRecord(testLogs,
                         new Media(new Date(1942, 4, 21), "Mr. Lee", 9328, "en-ca", "random house",
@@ -59,28 +50,14 @@ public class RecordTest {
                                         "Comedy"));
         LibraryRecord testLibraryRecord = new LibraryRecord(new ArrayList<UserRecord>(),
                         new ArrayList<MediaRecord>());
->>>>>>> final
 
-    /*****************
-     * Test LibraryRecord
-     *****************/
+        /*****************
+         * Test LibraryRecord
+         *****************/
 
-<<<<<<< HEAD
-    /**
-     * 
-     */
-    @Test
-    public void testUserRetrieval() {
-        testLogs.add(testLog);
-        testLogs.add(testLog2);
-        testPastFees.add(testFee);
-        UserRecord[] testUserRecords = testLibraryRecord.getUserRecords();
-        for (UserRecord userRecord : testUserRecords) {
-            assertEquals(testUser, userRecord.getOwner());
-=======
-         /**
-          * 
-          */
+        /**
+         * 
+         */
         @Test
         public void testUserRetrieval() {
                 testLogs.add(testLog);
@@ -90,23 +67,8 @@ public class RecordTest {
                 for (UserRecord userRecord : testUserRecords) {
                         assertEquals(testUser, userRecord.getOwner());
                 }
->>>>>>> final
         }
-    }
 
-<<<<<<< HEAD
-    /**
-     * 
-     */
-    @Test
-    public void testMediaRetrieval() {
-        testLogs.add(testLog);
-        testLogs.add(testLog2);
-        testPastFees.add(testFee);
-        MediaRecord[] testMediaRecords = testLibraryRecord.getMediaRecords();
-        for (MediaRecord mediaRecord : testMediaRecords) {
-            assertEquals("Mr. Lee", mediaRecord.getItem().getAuthor());
-=======
         /**
          * 
          */
@@ -119,8 +81,5 @@ public class RecordTest {
                 for (MediaRecord mediaRecord : testMediaRecords) {
                         assertEquals("Mr. Lee", mediaRecord.getItem().getAuthor());
                 }
->>>>>>> final
         }
-    }
-
 }

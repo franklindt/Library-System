@@ -8,6 +8,7 @@ import java.util.Date;
 import com.culminating.user.Borrower;
 import com.culminating.user.Librarian;
 import com.culminating.user.User;
+import com.culminating.utils.Library;
 
 import org.junit.Test;
 
@@ -31,7 +32,7 @@ public class UserTest {
     /**
      * Test Librarian
      */
-    private final Librarian librarian = new Librarian("people", "earth", 20, "collective", new Date());
+    private final Librarian librarian = new Librarian("people", "earth", 20, "collective", new Date(), new Library());
 
     @Test
     public void testLibrarianAttributeWasAssigned() {

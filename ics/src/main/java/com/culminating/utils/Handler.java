@@ -184,6 +184,17 @@ public class Handler {
 	}
 
 	/**
+	 * 
+	 * @param fee
+	 */
+	public void appendFines(Fee fee) {
+		ArrayList<Fee> tempFines = getFines();
+		tempFines.add(fee);
+		setFines(tempFines);
+
+	}
+
+	/**
 	 * Add user in system
 	 * 
 	 * @param user, the user need to be added in system

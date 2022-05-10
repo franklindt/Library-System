@@ -684,10 +684,10 @@ public class Test1 {
                 case "mediarecords":
                     System.out.println("Amount of records: ");
                     int records_qty = Integer.parseInt(scanner.nextLine());
-                    MediaRecord[] mediarecords = new MediaRecord[records_qty];
+                    ArrayList<MediaRecord> mediarecords = new ArrayList<>(records_qty);
                     for (int i = 0; i < records_qty; i++) {
-                        mediarecords[i] = new MediaRecord();
-                        mediarecord_(mediarecords[i]);
+                        mediarecords.set(i, new MediaRecord());
+                        mediarecord_(mediarecords.get(i));
                     }
                     libraryrecord.setMediaRecords(mediarecords);
                     break;
@@ -695,10 +695,10 @@ public class Test1 {
                 case "userrecords":
                     System.out.println("Amount of records: ");
                     int records1_qty = Integer.parseInt(scanner.nextLine());
-                    UserRecord[] userrecords = new UserRecord[records1_qty];
+                    ArrayList<UserRecord> userrecords = new ArrayList<>(records1_qty);
                     for (int i = 0; i < records1_qty; i++) {
-                        userrecords[i] = new UserRecord();
-                        userrecord_(userrecords[i]);
+                        userrecords.set(i, new UserRecord());
+                        userrecord_(userrecords.get(i));
                     }
                     libraryrecord.setUserRecords(userrecords);
                     break;
