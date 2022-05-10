@@ -15,16 +15,16 @@ import com.culminating.user.User;
 import com.culminating.media.Media;
 
 public class Hold extends Log {
-	private boolean arrived; //whether or not the holded media arrived
+   private boolean arrived; //whether or not the holded media arrived
 
    /**
    *Default constructor a hold: call superclass utils
    *sets arrived to false
    */
-	public Hold() {
-		super();
-		this.arrived = false;
-	}
+   public Hold() {
+	super();
+	this.arrived = false;
+   }
 
     /**
     *Constructor a hold: sets arrived, user, date, and detail from parameters
