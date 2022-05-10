@@ -23,9 +23,13 @@ public class UserRecord {
     public UserRecord() {
         this.owner = new User();
         this.pastFees = new ArrayList<Fee>();
-        this.pastFees.set(0, new Fee());
         this.borrowHistory = new ArrayList<Log>();
-        this.borrowHistory.set(0, new Log());
+    }
+
+    public UserRecord(User owner) {
+        this.owner = owner;
+        this.pastFees = new ArrayList<Fee>();
+        this.borrowHistory = new ArrayList<Log>();
     }
 
     public UserRecord(User owner, List<Fee> pastFees, List<Log> borrowHistory) {

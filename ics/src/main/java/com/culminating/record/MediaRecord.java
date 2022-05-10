@@ -35,6 +35,11 @@ public class MediaRecord {
         this.borrowHistory.set(0, new Log());
     }
 
+    public MediaRecord(Media item) {
+        this.item = item;
+        this.borrowHistory = new ArrayList<Log>();
+    }
+
     /**
      * Creates a MediaRecord object with prexisting logs and an item
      * 
