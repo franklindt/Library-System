@@ -15,11 +15,20 @@ import com.culminating.user.User;
 import com.culminating.payment.Fee;
 import com.culminating.utils.Log;
 
+/**
+ * Represents the history of a User's borrowing history and fee history
+ */
 public class UserRecord {
+    /** The User associated with this record */
     private User owner;
+    /** List of fees the user incurred */
     private List<Fee> pastFees;
+    /** List of the borrowing history of the user */
     private List<Log> borrowHistory;
 
+    /**
+     * Creates a UserRecord object containing all the details associated with User
+     */
     public UserRecord() {
         this.owner = new User();
         this.pastFees = new ArrayList<Fee>();
@@ -28,6 +37,9 @@ public class UserRecord {
         this.borrowHistory.set(0, new Log());
     }
 
+    /**
+     * Creates a UserRecord object containing all the details associated with User
+     */
     public UserRecord(User owner, List<Fee> pastFees, List<Log> borrowHistory) {
         this.owner = owner;
         this.pastFees = pastFees;
@@ -35,17 +47,19 @@ public class UserRecord {
     }
 
     /**
+     * Adds a fee to the fee history
      * 
-     * @param fee
+     * @param fee -> new fee to be added to the fee history
      */
     public void appendFeeLog(Fee fee) {
         this.pastFees.add(fee);
     }
 
     /**
+     * Appends a Log to the borrowing history
      * 
-     * @param media
-     * @param date
+     * @param media -> media item to be added to the log object
+     * @param date  -> date to be added to a new log object
      */
     public void appendBorrowHistory(Media media, Date date) {
         List<Log> tempBorrowHistory = this.borrowHistory;
@@ -55,10 +69,11 @@ public class UserRecord {
     }
 
     /**
+     * Appends a Log to the borrowing history
      * 
-     * @param media
-     * @param date
-     * @param detail
+     * @param media  -> media item to be added to the log object
+     * @param date   -> date to be added to a new log object
+     * @param detail -> description for the log object
      */
     public void appendBorrowHistory(Media media, Date date, String detail) {
         List<Log> tempBorrowHistory = this.borrowHistory;
@@ -66,6 +81,10 @@ public class UserRecord {
         tempBorrowHistory.add(newLog);
         this.borrowHistory = tempBorrowHistory;
     }
+
+    /**
+     * @return User
+     */
     /*
      * Accessors and Mutators
      */
@@ -74,26 +93,46 @@ public class UserRecord {
         return this.owner;
     }
 
+    /**
+     * @param owner
+     */
     public void setOwner(User owner) {
         this.owner = owner;
     }
 
+    /**
+     * @return List<Fee>
+     */
     public List<Fee> getPastFees() {
         return this.pastFees;
     }
 
+    /**
+     * @param pastFees
+     */
     public void setPastFees(List<Fee> pastFees) {
         this.pastFees = pastFees;
     }
 
+    /**
+     * @return List<Log>
+     */
     public List<Log> getBorrowHistory() {
         return this.borrowHistory;
     }
 
+    /**
+     * @param borrowHistory
+     */
     public void setBorrowHistory(List<Log> borrowHistory) {
         this.borrowHistory = borrowHistory;
     }
 
+    /**
+     * String representation of the UserRecord
+     * 
+     * @return String
+     */
     public String toString() {
         String ret = "";
         ret += "User: " + this.owner.toString() + "\nFees: ";

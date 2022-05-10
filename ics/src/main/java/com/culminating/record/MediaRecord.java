@@ -17,7 +17,7 @@ import com.culminating.media.Media;
 import com.culminating.utils.Log;
 
 /**
- * Stores the borrow history of a particular Media item
+ * Represents borrow history of a particular Media item
  */
 public class MediaRecord {
     /** List of Logs which form the borrowing history of the Media Item */

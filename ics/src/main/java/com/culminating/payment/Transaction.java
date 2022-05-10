@@ -7,6 +7,11 @@ package com.culminating.payment;
 
 import java.util.ArrayList;
 
+/**
+ * Represents a transaction block using Fees
+ * 
+ * @see Fee
+ */
 public class Transaction {
 	/** Transactions made of a list of individual Fees */
 	private ArrayList<Fee> fees;
