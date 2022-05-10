@@ -17,12 +17,12 @@ commenting files:
   - [x] library record
   - [x] media record
   - [x] user record
-- [ ] user
-  - [ ] borrower
-  - [ ] librarian
-  - [ ] user
-- [ ] utils
-  - [ ] handler
+- [x] user
+  - [x] borrower
+  - [x] librarian
+  - [x] user
+- [x] utils
+  - [x] handler
   - [x] hold
   - [x] itemstatus
   - [x] library

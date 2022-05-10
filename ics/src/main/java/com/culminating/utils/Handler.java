@@ -184,8 +184,9 @@ public class Handler {
 	}
 
 	/**
+	 * Appends a fee to the fee history
 	 * 
-	 * @param fee
+	 * @param fee -> to be appended
 	 */
 	public void appendFines(Fee fee) {
 		ArrayList<Fee> tempFines = getFines();
