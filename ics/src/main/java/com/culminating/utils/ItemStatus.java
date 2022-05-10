@@ -15,7 +15,7 @@ import com.culminating.user.User;
 import com.culminating.media.Media;
 
 public class ItemStatus extends Log {
-	private boolean status; //the status of the item
+    private boolean status; //the status of the item
     private int times_renewed; //the number of times the item has been renewed
 
    /**
@@ -23,11 +23,11 @@ public class ItemStatus extends Log {
    *sets status to false
    *sets times renewed to -1
    */
-	public ItemStatus() {
-		super();
-		this.status = false;
+    public ItemStatus() {
+	super();
+	this.status = false;
         this.times_renewed = -1;
-	}
+    }
 
     /**
     *Constructor a itemStatus: sets user, item, date, detail, status and times_renewed from parameters
