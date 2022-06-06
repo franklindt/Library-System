@@ -1,3 +1,8 @@
+/**
+ * Name(s): Franklin, Mike, Grace, Sophia
+ * Date: 2022-05-04
+ * Description: Librarian class
+ */
 package com.culminating.user;
 
 import java.util.Date;
